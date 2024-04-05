@@ -1,0 +1,126 @@
+@import "_normalize2";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+$dashboard-table-bg-color: rgb(255, 255, 255);
+$main-wrapper-bg-color: rgba(249, 251, 255, 1);
+$active-indicat-color: #008767;
+$active-indicat-bg-color: rgba(22, 192, 152, 0.38);
+$active-indicat-border: #00b087;
+$inactive-indicat-color: #df0404;
+$inactive-indicat-bg-color: #ffc5c5;
+$inactive-indicat-border: #df0404;
+$table-primary-color-text: rgb(41, 45, 50);
+$table-secondary-color-text: rgb(181, 183, 192);
+$navigation-active-dashboard-color: #5932ea;
+$actice-dashboard-link-color: rgb(255, 255, 255);
+$inactice-dashboard-link-color: rgba(145, 151, 179, 1);
+
+@mixin text-typograhy-style {
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  color: rgba(41, 45, 50, 1);
+}
+@mixin dashboard-header-primary-text {
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  font-size: 26px;
+  line-height: 39px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+#container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+.dashboard-wrapper {
+  background-color: $dashboard-table-bg-color;
+  box-sizing: border-box;
+  flex-basis: 306px;
+  flex-shrink: 0;
+  padding-top: 36px;
+  padding-left: 28px;
+  & .dashboard-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 64px;
+    &__logo {
+      margin-right: 8px;
+    }
+    &__primary-text {
+      @include dashboard-header-primary-text;
+    }
+  }
+  & .dashboar-links-container{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+
+      .link-item {
+        @include text-typograhy-style;
+        font-weight: 400;
+        text-decoration: none;
+        background-color: transparent;
+        color: $inactice-dashboard-link-color;
+        display: flex;
+        align-items: center;
+        gap:14px;
+        & .vector{
+            margin-left: auto;
+        }
+        &.active {
+          color: $actice-dashboard-link-color;
+          background-color: $navigation-active-dashboard-color;
+          padding: 11px;
+          border-radius: 8px;
+          fill: $actice-dashboard-link-color;
+        }
+      }
+
+  }
+}
+.main-wrapper {
+  background-color: $main-wrapper-bg-color;
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.table-text {
+  @include text-typograhy-style;
+  font-weight: 500;
+  &--primary {
+    color: $table-primary-color-text;
+  }
+  &--secondary {
+    color: $table-secondary-color-text;
+  }
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 80px;
+  height: 29px;
+  border-style: solid;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 4px 12px;
+  font-weight: 500;
+  &--active {
+    background-color: $active-indicat-bg-color;
+    color: $active-indicat-color;
+    border-color: $active-indicat-border;
+  }
+  &--inactive {
+    background-color: $inactive-indicat-bg-color;
+    color: $inactive-indicat-color;
+    border-color: $inactive-indicat-border;
+  }
+}
