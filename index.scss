@@ -83,6 +83,7 @@ body {
   min-width: 360px;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
   @include mobile() {
     flex-direction: column-reverse;
   }
