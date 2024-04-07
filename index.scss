@@ -227,7 +227,7 @@ body {
   flex-grow: 1;
   flex-shrink: 1;
   padding: 41px 71px;
-  overflow: auto;
+  overflow-y: auto;
   @include laptop() {
     padding: 10px 20px;
   }
